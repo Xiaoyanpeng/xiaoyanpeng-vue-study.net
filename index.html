@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>麦收网</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="app">
+	  <p>{{message}}</p>
+	  <p>{{age}}</p>
+	  <p class="text" v-show="age > 0">年龄</p>
+	  <p class="text" v-if="age > 20">成年人</p>
+	  <p class="text" v-else>未成年</p>
+	  <input type="number" v-model="age">
+	  <table>
+		  <tr v-for="one in people">
+			  <td>{{one.name}}</td>
+			  <td>{{one.school}}</td>
+		  </tr>
+	  </table>
+	  <ul>
+		  <li v-for="n in pageCount" v-on:click="change(n)" v-bind:class="activeNumber === n? 'active' : ''"><a href="javascript:void(0);">{{n}}</a></li>
+	  </ul>
+	  <ul>
+		  <li v-for="n in pageCount" @click="change(n)" :class="activeNumber === n? 'active' : ''"><a href="javascript:void(0);">{{n}}</a></li>
+	  </ul><br>
+		<select v-model="sex">
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+		</select>
+		<p>{{sex}}</p>
+		<p class="add" @click="reduce">-</p>
+		<p class="add">{{val}}</p>
+		<p class="add" @click="add">+</p>
+	</div><br><br><br>
+	<section id="message">
+		<label for="">名字</label>
+		<input type="text" v-model="newPerson.name"><br>
+		<label for="">学校</label>
+		<input type="text" v-model="newPerson.school">
+		<button @click="add">添加</button>
+		<table>
+			<thead>
+                <tr>
+					<th>序号</th>
+                    <th>名字</th>
+                    <th>学校</th>
+					<th>年龄</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+				<tr v-for="(one, index) in people">
+					<td>{{index +1}}</td>
+					<td>{{one.name}}</td>
+					<td>{{one.school}}</td>
+					<td>{{one.age}}</td>
+					<td><a href="javascript:void(0);" @click="del(index)">删除</a></td>
+				</tr>
+            </tbody>
+			<tfoot>
+				<a href="javascript:void(0);" @click="sort_max">由大到小排序</a>&nbsp;
+				<a href="javascript:void(0);" @click="sort_min">由小到大排序</a>
+			</tfoot>
+	  	</table>
+	</section>
+    <script type="text/javascript" src="js/lib/vue.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+html, body {
+  font: 13px/18px sans-serif;
+}
+select {
+  min-width: 300px;
+}
+.text{
+  height: 20px;
+}
+li{
+  width: 50px;
+  float: left;
+  list-style-type: none ;
+}
+li.active{
+  background-color: red;
+}
+.add{
+  width: 20px;
+  height: 20px;
+  float: left;
+}
