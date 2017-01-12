@@ -20,3 +20,42 @@ li.active{
   height: 20px;
   float: left;
 }
+.red{
+  color: red;
+}
+.bold{
+  font-weight: bold;
+}
+.card{
+  width: 250px;
+  height: 100px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+.card:nth-child(1){
+  background-color: #00ddff;
+}
+.card:nth-child(2){
+  background-color: #daa333;
+}
+.card:nth-child(3){
+  background-color: #ee11dd;
+}
+.card:nth-child(4){
+  background-color: #00ee00;
+}
+.hide{
+  height: 30px;
+  width: 100px;
+  background-color: #5d4f3d;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}

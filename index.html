@@ -25,9 +25,7 @@
 	  <ul>
 		  <li v-for="n in pageCount" v-on:click="change(n)" v-bind:class="activeNumber === n? 'active' : ''"><a href="javascript:void(0);">{{n}}</a></li>
 	  </ul>
-	  <ul>
-		  <li v-for="n in pageCount" @click="change(n)" :class="activeNumber === n? 'active' : ''"><a href="javascript:void(0);">{{n}}</a></li>
-	  </ul><br>
+	 <br>
 		<select v-model="sex">
 			<option value="Male">Male</option>
 			<option value="Female">Female</option>
@@ -68,6 +66,15 @@
 			</tfoot>
 	  	</table>
 	</section>
+	<div id="owndiv">
+		<app-div v-for="item in message" :people="item"></app-div>
+	</div>
+	<div id="switch">
+		<button @click="show = !show">点击切换</button>
+		<transition name="fade">
+			<p class="hide" v-show="show">hello</p>
+		</transition>
+	</div>
     <script type="text/javascript" src="js/lib/vue.min.js"></script>
 	<script src="js/index.js"></script>
 </body>

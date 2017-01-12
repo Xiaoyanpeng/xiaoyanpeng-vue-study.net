@@ -62,3 +62,24 @@ new Vue({
     }
   }
 })
+
+Vue.component('app-div', {
+  props: ['people'],
+  template: '<div class="card">\
+                <p>姓名：<span>{{people.name}}</span></p>\
+                <p>学校：<span>{{people.school}}</span></p>\
+              </div>'
+})
+new Vue({
+  el: '#owndiv',
+  data:{
+    message:[{name:'小米',school:'厦门理工学院'},{name:'小天',school:'厦门大学'},{name:'小燕',school:'集美大学'},{name:'小发',school:'华侨大学'}]
+  }
+})
+
+new Vue({
+  el: '#switch',
+  data: {
+    show: true,
+  }
+})
